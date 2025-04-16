@@ -19,6 +19,17 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
+
+
+
+if (process.env.NODE_ENV === "production") {
+  console.log("App is running in production mode");
+  // Additional production optimizations (e.g., disable logging, caching)
+} else {
+  console.log("App is running in development mode");
+}
+
+
 // 🔥 Serve uploaded files statically
 app.use("/upload", express.static(path.join(__dirname, "../client/public/upload")));
 
