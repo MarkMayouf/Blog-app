@@ -17,4 +17,6 @@ export const db = mysql.createConnection({
   database: process.env.DB_NAME || "blog",
   port: process.env.DB_PORT,
 });
+console.log("DB_USER:", process.env.DB_USER);
+console.log("DB_PASS exists:", !!process.env.DB_PASS);
 
