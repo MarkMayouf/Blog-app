@@ -60,6 +60,10 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
+app.get("/", (req, res) => {
+  res.send("🚀 Server is up and running");
+});
+
 app.listen(5000, () => {
   console.log("Connected!");
 });
